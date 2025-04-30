@@ -1,0 +1,37 @@
+# สร้างคำถามแบบง่าย
+questions = [
+    {
+        "question": "ประเทศไทยมีจังหวัดทั้งหมดกี่จังหวัด?",
+        "choices": ["74", "76", "77", "79"],
+        "answer": "76"
+    },
+    {
+        "question": "ผลไม้ใดต่อไปนี้มีเปลือกแข็ง?",
+        "choices": ["แตงโม", "กล้วย", "มะพร้าว", "ฝรั่ง"],
+        "answer": "มะพร้าว"
+    },
+    {
+        "question": "ภาษาใดนิยมใช้ในการเขียนเกม?",
+        "choices": ["Python", "HTML", "CSS", "SQL"],
+        "answer": "Python"
+    }
+]
+
+score = 0
+
+# เริ่มเกม
+for q in questions:
+    print("\n" + q["question"])
+    for i, choice in enumerate(q["choices"], 1):
+        print(f"{i}. {choice}")
+
+    answer = input("เลือกคำตอบ (พิมพ์หมายเลข): ")
+
+    if q["choices"][int(answer)-1] == q["answer"]:
+        print("ถูกต้อง!")
+        score += 1
+    else:
+        print(f"ผิด! คำตอบที่ถูกคือ: {q['answer']}")
+
+# แสดงคะแนน
+print(f"\nคุณได้ {score} จาก {len(questions)} คะแนน")
